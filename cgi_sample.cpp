@@ -55,12 +55,12 @@ int main(int argc, char* argv[])
 		"SALARY         REAL,"\
 		"PRIMARY KEY (\"ID\")"\
 	");";
-	do_sql(sql, rc, zErrMsg, db);	// Create
+	do_sql_json(sql, rc, zErrMsg, db);	// Create
 	
 	for(int i=0;i<10;i++){
 		sprintf(i2s, "INSERT INTO COMPANY (NAME,AGE,ADDRESS,SALARY) VALUES ('Paul', %d, 'California', 20000.00 );" ,i);
 		sql=string(i2s);
-		do_sql(sql, rc, zErrMsg, db);	// Create
+		do_sql_json(sql, rc, zErrMsg, db);	// Create
 	}
 	
 	sql = "SELECT * from COMPANY";
